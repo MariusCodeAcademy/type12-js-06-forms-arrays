@@ -12,7 +12,8 @@ function handleFormSubmit(event) {
   // 2. nusitaike i forma mes sustabdom josissiuntima su restartu
   // event.preventDefault(); sustabdyti numatytaji veiksma
   event.preventDefault();
-  console.log('Submit js is in control');
+
+  console.log('Submit js is in control', event);
 }
 
 // 3. pereme formos issiuntimo eventa mes pasiimam ivesetties laukur reiksmes
