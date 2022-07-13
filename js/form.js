@@ -6,9 +6,10 @@ const userFormEl = document.getElementById('userForm');
 console.log('userFormEl ===', userFormEl);
 const usernameEl = document.getElementById('username');
 const ageEl = document.getElementById('age');
+const cardEl = document.getElementById('card');
 
 // uzdeti formai ivykio submit pasiklausyma
-userFormEl.addEventListener('submit', handleFormSubmit);
+userFormEl.addEventListener('submit', handleFormSubmitNoComment);
 
 function handleFormSubmit(event) {
   // 2. nusitaike i forma mes sustabdom josissiuntima su restartu
@@ -19,8 +20,33 @@ function handleFormSubmit(event) {
   // kas ivesta i ageEl === ageEl.value
   const formAgeValue = ageEl.value;
   console.log('formAgeValue ===', formAgeValue);
-  // usernameValue
+  const usernameValue = usernameEl.value;
+  console.log('usernameValue ===', usernameValue);
   // pagaminti objekta kuriame butu username ir age su reikmem
 }
+function handleFormSubmitNoComment(event) {
+  event.preventDefault();
+  const userInputsObj = {
+    username: usernameEl.value,
+    age: ageEl.value,
+  };
+  console.log('userInputsObj ===', userInputsObj);
+  // isvalyti inputus
+  userFormEl.reset();
+  // usernameEl.value = '';
+  // ageEl.value = '';
+
+  outputFormDataToHtml(userInputsObj);
+  // sukurti paragrafa
+  const pEl = document.createElement('p');
+  // irasyti reiksme
+  pEl.textContent = `Forma issiusta. Vartotojo vardas: ${userInputsObj.username} ir vartojas yra ${userInputsObj.age} metu amziaus`;
+  // patalpinti cardEL
+  cardEl.append(pEl);
+}
+
+function outputFormDataToHtml(userData) {}
 
 // 3. pereme formos issiuntimo eventa mes pasiimam ivesetties laukur reiksmes
+
+// Atspausdinti paragrafuose dive us id card ivesta username ir age
