@@ -4,8 +4,8 @@ console.log('mainArray ===', mainArray);
 
 function doStuffToArray(title, arr, action) {
   console.group(title);
+  // skaiciavimai
   const arrCopy = arr.slice();
-
   const arrLen = arrCopy.length;
   for (let i = 0; i < arrLen; i++) {
     // vietinis kintamasis local variable
