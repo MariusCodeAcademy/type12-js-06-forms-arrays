@@ -37,15 +37,16 @@ function handleFormSubmitNoComment(event) {
   // ageEl.value = '';
 
   outputFormDataToHtml(userInputsObj);
+}
+
+function outputFormDataToHtml(userData) {
   // sukurti paragrafa
   const pEl = document.createElement('p');
   // irasyti reiksme
-  pEl.textContent = `Forma issiusta. Vartotojo vardas: ${userInputsObj.username} ir vartojas yra ${userInputsObj.age} metu amziaus`;
+  pEl.textContent = `Forma issiusta. Vartotojo vardas: <strong>${userData.username}</strong> ir vartojas yra ${userData.age} metu amziaus`;
   // patalpinti cardEL
   cardEl.append(pEl);
 }
-
-function outputFormDataToHtml(userData) {}
 
 // 3. pereme formos issiuntimo eventa mes pasiimam ivesetties laukur reiksmes
 
