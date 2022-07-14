@@ -55,8 +55,17 @@ function outputColors(arr) {
 
 // nusitaikyti i terms input
 // nusitaikyti i submit button
+const htmlEls = {
+  terms: document.getElementById('terms'),
+  submitBtn: document.getElementById('sub'),
+};
 
 //  terms input uzdeti eventa (change)
+htmlEls.terms.addEventListener('change', (event) => {
+  console.log('CHange ', htmlEls.terms.checked);
+  console.log('CHange ', event.target.checked);
+  htmlEls.submitBtn.disabled = event.target.checked ? false : true;
+});
 
 // ivykus eventui mes tikrinam ar checked yra true
 // jei yra tai nuimam nuo mygtuko disabled
