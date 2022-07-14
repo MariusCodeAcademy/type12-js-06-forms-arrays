@@ -13,11 +13,26 @@
 
 <body>
   <div class="container">
-    <h1>Lets Form uzd</h1>
+    <h1>Kaip pasiimti value is radio btn</h1>
 
     <input type="text" id="ivesk" placeholder="vesk">
-
     <h2 id="card"></h2>
+    <form id="radioForm">
+      <fieldset class="flex">
+        <legend>Your gender</legend>
+        <div>
+          <input type="radio" name="gender" id="male" value="male" checked required>
+          <label for="male">Male</label>
+        </div>
+        <div>
+          <input type="radio" name="gender" id="female" value="female" required>
+          <label for="female">Female</label>
+        </div>
+      </fieldset>
+      <button type="submit">Siusti</button>
+
+    </form>
+
 
   </div>
 
